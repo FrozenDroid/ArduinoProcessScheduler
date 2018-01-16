@@ -2,7 +2,7 @@
 A cooperative Arduino object oriented, cooperative process scheduler to replace them all.
 
 ## What is this?
-As your Arduino projects get more complicated, you will begin to see the need for multitasking, or at least appear to multitask. Perhaps you want to check if a button was pressed as often as you can, but you only want to update a display once every second. Trying to do this on your own can quickly turn into overwhelming spagetti code involving `millis()`. `ArduinoProcessScheduler` seeks to simplify this. Simply create your custom Process that needs to be serviced at certain times, and let the scheduler handle the rest.
+As your Arduino projects get more complicated, you will begin to see the need for multitasking, or at least appear to multitask. Perhaps you want to check if a button was pressed as often as you can, but you only want to update a display once every second. Trying to do this on your own can quickly turn into overwhelming spagetti code involving `millis()`. `ArduinoProcessScheduler` seeks to simplify this. Simply create your custom process that needs to be serviced at certain times, and let the scheduler handle the rest.
 
 ## Why this one?
 
@@ -18,7 +18,7 @@ Here are some similar popular libraries that inspired this one:
   2. Limits you to one instance of a process, or lots of copy & paste.
   3. Impossible to truly dynamically create new processes, you are really just enabling/disabling a callback function.
 2. Preemptive schedulers must split stack between all processes
-  1. With 2K or RAM and 8 processes, preemptive scheduler could at most equally give each Process 2k/8 = 256 Bytes of RAM.
+  1. With 2K or RAM and 8 processes, preemptive scheduler could at most equally give each process 2k/8 = 256 bytes of RAM.
 3. No concurrency protection (not interrupt safe)
   1. What if an interrupt fires an tries to disable a process while it is running?
 
@@ -29,7 +29,7 @@ Here are some similar popular libraries that inspired this one:
 - Process priority levels (easily make custom levels as well)
 - Dynamically add/remove and enable/disable processes
 - Interrupt safe (add, disable, destroy, etc.. processes from interrupt routines)
-- Process concurrency protection (Process will always be in a valid state)
+- Process concurrency protection (process will always be in a valid state)
 
 ### Advanced
 - Spawn new processes from within running processes
@@ -38,7 +38,7 @@ Here are some similar popular libraries that inspired this one:
 - Exception handling (wait what?!)
 - Scheduler can automatically interrupt stuck processes
 
-## Supported Platfroms
+## Supported Platforms
 - AVR
 - ESP8266 (No exception handling or process timeouts)
 
@@ -52,10 +52,10 @@ NOTE: Don't forget to install this [RingBuf](https://github.com/wizard97/Arduino
 I welcome any contributions! Here are some ideas:
 - Built in logging
 - Built in timers
-- Built in process ownership (Library tracks who owns a Process)
-- More advanced Process statistics monitoring
+- Built in process ownership (library tracks who owns a process)
+- More advanced process statistics monitoring
 - Adding support for additional platforms
-- Any Examples!
+- Any examples!
 
 
 ## License
